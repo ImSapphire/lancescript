@@ -289,11 +289,11 @@ local function get_stat_by_name(stat_name, character)
 end
 
 local function get_prostitutes_solicited(pid)
-    return memory.read_int(memory.script_global(1853348 + 1 + (pid * 834) + 205 + 54))
+    return memory.read_int(memory.script_global(1853910 + 1 + (pid * 862) + 205 + 54))
 end
 
 local function get_lapdances_amount(pid) 
-    return memory.read_int(memory.script_global(1853348 + 1 + (pid * 834) + 205 + 55))
+    return memory.read_int(memory.script_global(1853910 + 1 + (pid * 862) + 205 + 55))
 end
 local ap_root = menu.list(online_root, translations.all_players, {translations.all_players_cmd}, "")
 local apfriendly_root = menu.list(ap_root, translations.all_players_friendly, {translations.all_players_friendly_cmd}, "")
@@ -6038,10 +6038,10 @@ end)
 
 protections_root:toggle_loop(translations.auto_remove_bounty, {}, "", function()
     if util.is_session_started() then
-        if memory.read_int(memory.script_global(1835502 + 4 + 1 + (players.user() * 3))) == 1 then
-            memory.write_int(memory.script_global(2815059 + 1856 + 17), -1)
+        if memory.read_int(memory.script_global(1835504 + 4 + 1 + (players.user() * 3))) == 1 then
+            memory.write_int(memory.script_global(2793046 + 1886 + 17), -1)
             memory.write_int(memory.script_global(2359296 + 1 + 5149 + 13), 2880000)
-            notify(translations.removed_bounty ..memory.read_int(memory.script_global(1835502 + 4 + 1 + (players.user() * 3) + 1)).. " ")
+            notify(translations.removed_bounty ..memory.read_int(memory.script_global(1835504 + 4 + 1 + (players.user() * 3) + 1)).. " ")
         end
     end
     util.yield(5000)
@@ -6277,7 +6277,7 @@ end)
 
 -- credit to prism
 local function get_interior_player_is_in(pid)
-    return memory.read_int(memory.script_global(((0x2908D3 + 1) + (pid * 0x1C5)) + 243)) 
+    return memory.read_int(memory.script_global(2657589 + 1 + (pid * 466) + 245))
 end
 
 local player_last_positions = {}
